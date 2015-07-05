@@ -10,10 +10,11 @@
 
 	<!-- =============== Properties ============= -->
 	<properties>
-		<jdk.version>1.8</jdk.version>
+		<jdk.version>1.6</jdk.version>
 		<servletapi.version>3.1.0</servletapi.version>
 		<org.junit.version>4.12</org.junit.version>
 	</properties>
+	<!-- ========================================= -->
 	<dependencies>
 		<!-- compile only, deployed container will provide this -->
 		<dependency>
@@ -35,8 +36,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
 				<configuration>
-					<webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
 				</configuration>
 			</plugin>
 			<plugin>
