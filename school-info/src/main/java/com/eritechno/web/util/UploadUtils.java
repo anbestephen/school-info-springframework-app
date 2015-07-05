@@ -3,9 +3,12 @@ package com.eritechno.web.util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,6 +19,7 @@ public class UploadUtils {
 	public static final String PHOTOS_ROOT = "photos";
 	public static final String STUDENT_DIRECTORY = "student";
 	public static final String IMAGE_EXTENTION = ".jpg";
+	public static final String DEFAULT_PHOTO = "images/user.jpg";
 
 	/**
 	 * 
@@ -99,13 +103,24 @@ public class UploadUtils {
 		try {
 			File photo = new File(getStudentPhotoFullPath(studentId));
 			if (!photo.exists()) {
-				photo = new File(getStudentPhotoFullPath(0));
+				photo = getDefaultProfilePhoto();
 			}
 			image = IOUtils.toByteArray(new FileInputStream(photo));
 		} catch (Exception e) {
 			logger.error("Error reading image", e);
 		}
 		return image;
+	}
+
+	private static File getDefaultProfilePhoto() {
+		Resource resource = new ClassPathResource(DEFAULT_PHOTO);
+		File file = null;
+		try {
+			file = resource.getFile();
+		} catch (IOException e) {
+			logger.error("Error reading file", e);
+		}
+		return file;
 	}
 
 	/**
