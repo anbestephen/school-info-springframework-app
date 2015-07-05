@@ -1,0 +1,35 @@
+body{
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+._404 {
+	color: silver;
+}
+
+._404-title {
+	text-align: center;
+	font-size: 150px;
+}
+
+._404-description {
+	text-align: center;
+	font-size: 30px;
+}
+
+.dialog {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 700px;
+}
+.copyright{
+	color: silver;
+	text-align: center;
+	margin-top: 10px;
+}
+img.thumbnail{
+  border: 1px solid silver;
+  width:100px;
+  border-radius: 5px;
+  padding: 2px;
+  box-shadow: 2px 2px 2px silver;
+}

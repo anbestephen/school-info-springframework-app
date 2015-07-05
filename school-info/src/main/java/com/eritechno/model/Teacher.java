@@ -4,8 +4,9 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class Student {
-	private long id;
+public class Teacher {
+
+	private int id;
 	@NotNull(message = "firstName is required")
 	@Size(min = 5, max = 12)
 	private String firstName;
@@ -14,34 +15,30 @@ public class Student {
 	private String lastName;
 	@Min(6)
 	private int age;
-	@NotNull
 	private char gender;
 
-	public Student() {
+	public Teacher() {
 	}
 
-	public Student(String firstName, String lastName, int age, char gender) {
+	public Teacher(String firstName, String lastName, int age) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.gender = gender;
 	}
 
-	public Student(long id, String firstName, String lastName, int age,
-			char gender) {
+	public Teacher(int id, String firstName, String lastName, int age) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.gender = gender;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
