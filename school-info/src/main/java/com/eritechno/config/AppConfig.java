@@ -13,7 +13,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles2.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles2.TilesView;
-
+/**
+ * main spring configuration file
+ * 
+ * @author ambes
+ *
+ */
 @ComponentScan(basePackages = "com.eritechno")
 @Configuration
 public class AppConfig extends WebMvcConfigurationSupport {
